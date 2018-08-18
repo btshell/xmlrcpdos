@@ -1,5 +1,5 @@
 #################################################################################
-# CVE-XXXXX Wordpress and Drupal XML Attack DoS#
+# Wordpress and Drupal XML Attack DoS                                           #
 #################################################################################
 #!/usr/bin/env python
 from __future__ import print_function
